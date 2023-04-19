@@ -21,7 +21,7 @@ intents.members = True
 
 bot = commands.Bot(command_prefix="!", intents=intents)
 
-TOKEN = 'MTA5MTk3NjI2NjkwNDc2ODYxMg.Gire-N.I03cEpNrlNNcAWzjqOVhhEjelN4sCZffJiov7A'
+TOKEN = 'MTA5MTk3NjI2NjkwNDc2ODYxMg.Gw9JHV.65uP2TZmUNo5hFIw1LR4m7I07DC_tuJ7FIpWPE'
 
 
 @bot.event
@@ -34,16 +34,7 @@ async def список_команд(ctx):
     f = list(map(lambda x: x.strip(), open('function_list.txt', encoding='utf-8').readlines()))
     embed = disnake.Embed(title='функции бота:', description="\n".join(f), color=disnake.Color.blue())
     msg = await ctx.send(embed=embed)
-    await ctx.channel.fetch_message(msg.id)\
-
-
-
-@bot.slash_command()
-async def чит_код(ctx, код: str, участник: disnake.Member = None):
-    code = '021206'
-    if code == код:
-        await участник.add_roles('админ')
-
+    await ctx.channel.fetch_message(msg.id)
 
 
 # Повторяет сообщение, отправленное пользователем
